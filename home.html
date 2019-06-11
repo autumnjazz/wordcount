@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>단어 수 세기</title>
+</head>
+<style>
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover {
+        color: lightgray;
+    }
+
+    body {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3%;
+        text-align: center
+    }
+
+    header {
+        padding: 15px;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 17px;
+    }
+
+    .about {
+        font-size: 20px;
+        margin: 30px;
+    }
+</style>
+<script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+
+<body>
+    <header>
+        <h1>단어 수 '만' 세주는 사이트입니다</h1>
+    </header>
+    <div class="about">
+        <ion-icon name="help"></ion-icon>
+        <a href="{% url 'about' %}">관련 설명</a>
+    </div>
+
+    <form action="{% url 'count' %}">
+        <div class="area">
+            <textarea name="fulltext" cols="40" rows="10"></textarea>
+        </div>
+        <div class="button">
+            <input type="submit" value="count" />
+        </div>
+    </form>
+</body>
+
+</html>
